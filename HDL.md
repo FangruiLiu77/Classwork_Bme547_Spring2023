@@ -1,4 +1,5 @@
-#HDL
-high density lipoproteins
+# HDL
 
-HDL is often ...
+High density lipoproteins
+
+HDL is often though of as the "good" cholesterol.
