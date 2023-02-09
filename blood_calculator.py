@@ -18,7 +18,7 @@ def interface():
             total_driver()
     print("Program ending")
 
-def HDL_driver( ):
+def HDL_driver(): 
     HDL_in = generic_input("HDL")
     HDL_analy = HDL_analysis(HDL_in)
     generic_output("HDL", HDL_in, HDL_analy)
@@ -36,8 +36,7 @@ def HDL_analysis(HDL_int):
     else:
         answer = "Low"
     return answer
-    
-    
+       
 def generic_output(test_name, test_value, test_analy):
     print("The {} result of {} is considered {}"
         .format(test_name, test_value, test_analy))
