@@ -7,12 +7,21 @@ def input_weight_entry():
 
 
 def parse_weight_input(weight_input):
+    if weight_input == "":
+        return None
+    if weight_input.find(" ") < 0:
+        return None
     weight, units = weight_input.split(' ')
-    weight = int(weight)
-    if units == "lb":
+    weight = float(weight)
+    units = units.lower()
+    if units[-1] == "s":
+        units = units[0:-1]
+    if units in ["lb", "pound"]:
         weight_kg = convert_lb_to_kg(weight)
-    else:
+    elif units == "kg":
         weight_kg = weight
+    else:
+        return None
     weight_kg = round(weight_kg)
     return weight_kg
 
