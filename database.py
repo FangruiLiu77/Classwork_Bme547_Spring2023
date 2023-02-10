@@ -60,7 +60,6 @@ def get_test_value_from_test_list(test_list, test_name):
             return test[1]
     return False
 
-
 def get_test_result(db, mrn, test_name):
     patient = get_patient_entry(db, mrn)
     test_value = get_test_value_from_test_list(patient["Test"], test_name)
