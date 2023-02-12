@@ -1,5 +1,6 @@
 import pytest
 
+
 @pytest.mark.parametrize("input, expected", [
     ("22 lb", 10),
     ("50 kg", 50),
