@@ -1,18 +1,22 @@
-#database
+# database
 
 def create_patient_entry(first_name, last_name, patient_mrn, patient_age):
-    #new_patient = [patient_name, patient_mrn, patient_age,[]]
+    # new_patient = [patient_name, patient_mrn, patient_age,[]]
     new_patient = {"First Name": first_name, "Last Name": last_name,
                    "MRN": patient_mrn, "Age": patient_age,
                    "Tests": []}
     return new_patient
 
+
 def get_full_name(patient):
     return "{} {}".format(patient["First Name"], patient["Last Name"])
 
+
 def print_database(db):
     for patient in db.values():
-        print("MRN: {}, Full Name: {}, Age: {}".format(patient["MRN"], get_full_name(patient), patient["Age"]))
+        print("MRN: {}, Full Name: {}, Age: {}"
+              .format(patient["MRN"], get_full_name(patient), patient["Age"]))
+
 
 def main_driver():
     db = {}
@@ -25,11 +29,11 @@ def main_driver():
     add_test_to_patient(db, 2, "LDL", 100)
     add_test_to_patient(db, 2, "HDL", 99)
     print_database(db)
-    #room_numbers = ["103", "232", "333"]
-    #print(db)
-    #print_directory(db, room_numbers)
+    # room_numbers = ["103", "232", "333"]
+    # print(db)
+    # print_directory(db, room_numbers)
     print(get_test_result(db, 2, "LDL"))
-    return 
+    return
 
 
 def print_directory(db, room_numbers):
@@ -37,6 +41,7 @@ def print_directory(db, room_numbers):
         print("Patient {} is in room {}".format(patient[0], room_numbers[i]))
     for patient, rn in zip(db, room_numbers):
         print("Patient {} is in room {}".format(patient[0], rn))
+
 
 def get_patient_entry(db, mrn_to_find):
     patient = db[mrn_to_find]
@@ -65,6 +70,7 @@ def get_test_result(db, mrn, test_name):
     patient = get_patient_entry(db, mrn)
     test_value = get_test_value_from_test_list(patient["Test"], test_name)
     return test_value
+
 
 if __name__ == "__main__":
     main_driver()
