@@ -18,16 +18,19 @@ def interface():
             total_driver()
     print("Program ending")
 
-def HDL_driver( ):
+
+def HDL_driver():
     HDL_in = generic_input("HDL")
     HDL_analy = HDL_analysis(HDL_in)
     generic_output("HDL", HDL_in, HDL_analy)
 
+
 def generic_input(test_name):
     value = input("Enter the {} value: ".format(test_name))
     value = int(value)
-    return value  
- 
+    return value
+
+
 def HDL_analysis(HDL_int):
     if HDL_int >= 60:
         answer = "Normal"
@@ -36,18 +39,20 @@ def HDL_analysis(HDL_int):
     else:
         answer = "Low"
     return answer
-    
-    
+
+
 def generic_output(test_name, test_value, test_analy):
     print("The {} result of {} is considered {}"
-        .format(test_name, test_value, test_analy))
+          .format(test_name, test_value, test_analy))
     return
+
 
 def LDL_driver():
     LDL_in = generic_input("LDL")
     LDL_analy = LDL_analysis(LDL_in)
     generic_output("LDL", LDL_in, LDL_analy)
-    
+
+
 def LDL_analysis(LDL_int):
     if LDL_int >= 190:
         answer = "Very High"
@@ -59,10 +64,12 @@ def LDL_analysis(LDL_int):
         answer = "Normal"
     return answer
 
+
 def total_driver():
     total_in = generic_input("Total Cholesterol")
     total_analy = total_analysis(total_in)
     generic_output("Total Cholesterol", total_in, total_analy)
+
 
 def total_analysis(total_int):
     if total_int >= 240:
@@ -72,6 +79,7 @@ def total_analysis(total_int):
     else:
         answer = "Normal"
     return answer
- 
+
+
 if __name__ == "__main__":
     interface()
